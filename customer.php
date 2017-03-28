@@ -4,6 +4,8 @@
     <title>Customer Page</title>
 </head>
 <body>
+    <a href="merchandise.html">Go To Merchandise Page</a>
+    <hr>
     <form action="customer.php" method="post">
         <label for="fname">First Name: </label>
         <input type="text" id="fname" name="fname">
