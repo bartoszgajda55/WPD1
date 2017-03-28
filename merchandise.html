@@ -9,7 +9,7 @@
         <fieldset>
             <legend>Personal Information</legend>
             <label for="name">Customer Name:</label>
-            <input type="text" id="name">
+            <input type="text" id="name" minlength="3" required>
         </fieldset>
         <fieldset>
             <legend>Items Ordered</legend>
@@ -23,9 +23,9 @@
             <legend>Postage</legend>
             <label for="postage">Postage: </label>
             <select name="" id="postage">
-                <option value="1">One Day - 10£</option>
-                <option value="2">Normal Day - 5£</option>
-                <option value="3">Slow - Free</option>
+                <option value="10">Fast - 10£</option>
+                <option value="5">Normal - 5£</option>
+                <option value="0">Slow - Free</option>
             </select>
         </fieldset>
         <fieldset disabled>
@@ -34,9 +34,17 @@
             <input type="text" id="total">
         </fieldset>
         <fieldset>
-            <input type="button" value="Calculate Total Cost">
-            <input type="button" value="Clear">
+            <input type="button" value="Calculate Total Cost" onclick="calculateTotalPrice()">
+            <input type="reset" value="Clear">
         </fieldset>
     </form>
+    <script>
+        function calculateTotalPrice() {
+            var flag = document.getElementById("flag").value;
+            var mug = document.getElementById("mug").value;
+            var postage = document.getElementById("postage").value;
+            document.getElementById("total").value = (parseInt(flag) * 20) + (parseInt(mug) * 30) + parseInt(postage);
+        }
+    </script>
 </body>
 </html>
